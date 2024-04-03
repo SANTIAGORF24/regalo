@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regalos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1 id="title">si no te regalan flores</h1>
+      <div>
+        <img id="me" src="angela.jpeg" alt="" />
+      </div>
+      <div class="box">
+        <div class="loading-box"></div>
+      </div>
+      <h3 id="state-message">cargando...</h3>
+      <h2 id="result">&nbsp;</h2>
+      <script>
+        setTimeout(function () {
+          const message = document.getElementById("result");
+          message.innerHTML = "Yo te doy!";
+
+          // Redirigir a final.html después de 100ms (justo después de mostrar el mensaje)
+          setTimeout(function () {
+            window.location.href = "final.html";
+          }, 100);
+        }, 6200);
+        setTimeout(function () {
+          const message = document.getElementById("state-message");
+          message.innerHTML = "&nbsp;";
+        }, 6000);
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abrazo virtual</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1 id="title">Para Angela</h1>
+      <div>
+        <img id="me" src="penguin.svg" alt="" />
+      </div>
+      <div class="box">
+        <div class="loading-box"></div>
+      </div>
+      <h3 id="state-message">cargando...</h3>
+      <h2 id="result">&nbsp;</h2>
+      <!-- Botones -->
+      <button id="yesBtn"><span class="happy-face">&#128522;</span> Si</button>
+      <button id="noBtn"><span class="sad-face">&#128532;</span> No</button>
+    </main>
+    <!-- Asegúrate de agregar el script de JavaScript -->
+    <script src="index.js"></script>
+    <script>
+      // Esta es la parte del script de JavaScript de la lógica de los botones
+      setTimeout(function () {
+        const message = document.getElementById("result");
+        message.innerHTML = "estas lista?";
+
+        // Mostrar los botones
+        document.getElementById("yesBtn").style.display = "inline-block";
+        document.getElementById("noBtn").style.display = "inline-block";
+      }, 6200);
+
+      setTimeout(function () {
+        const message = document.getElementById("state-message");
+        message.innerHTML = "&nbsp;";
+      }, 6000);
+
+      const yesBtn = document.querySelector("#yesBtn");
+
+      yesBtn.addEventListener("click", function () {
+        // Redireccionar a carta.html
+        window.location.href = "carta.html";
+      });
+
+      const noBtn = document.querySelector("#noBtn");
+
+      noBtn.addEventListener("mouseover", function () {
+        const randomX = Math.random() * (window.innerWidth - noBtn.clientWidth);
+        const randomY =
+          Math.random() * (window.innerHeight - noBtn.clientHeight);
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+      });
+    </script>
+  </body>
+</html>

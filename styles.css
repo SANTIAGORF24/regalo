@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #add8e6;
+  font-family: "Comic Neue", cursive;
+}
+
+:root {
+  --loading-width: 160px;
+  --loading-heigth: 23px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden; /* Bloquear el desplazamiento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  text-align: center;
+  width: 90vw;
+}
+
+.box {
+  display: inline-block;
+  border: solid black 4px;
+  width: var(--loading-width);
+  background-color: white;
+}
+
+.loading-box {
+  height: var(--loading-heigth);
+  width: var(--loading-width);
+  background-color: blueviolet;
+  animation: loading 5s;
+}
+
+#state-message {
+  font-size: larger;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--loading-width);
+  }
+}
+
+#title,
+#result {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+#me {
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+.box {
+  margin-top: 3px;
+}
+
+/* Estilos para los botones */
+#yesBtn,
+#noBtn {
+  display: none;
+  position: absolute;
+  background-color: purple;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos específicos para el botón 'Si' */
+#yesBtn {
+  background-color: green;
+}
+
+/* Estilos específicos para el botón 'No' */
+#noBtn {
+  background-color: red;
+  left: calc(52% + 70px); /* Distancia desde el centro */
+}
+
+/* Estilos para la carita feliz */
+.happy-face {
+  font-size: 24px;
+}
+
+/* Estilos para la carita triste */
+.sad-face {
+  font-size: 24px;
+}
